@@ -4,7 +4,7 @@
  * @author: BruceHsu
  * @create: 2018-11-08 22:54
  */
-package tw.com.bruce.webscoket.security.filter;
+package tw.com.bruce.webscoket.security;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
