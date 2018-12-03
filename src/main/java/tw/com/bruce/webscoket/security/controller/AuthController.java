@@ -1,9 +1,4 @@
-/**
- * @program: webscoket
- * @description: 驗證用controller
- * @author: BruceHsu
- * @create: 2018-12-01 12:26
- */
+
 package tw.com.bruce.webscoket.security.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +11,17 @@ import tw.com.bruce.webscoket.security.controller.param.JwtAuthenticationRequest
 import tw.com.bruce.webscoket.security.service.AuthService;
 import tw.com.bruce.webscoket.security.service.model.User;
 
+import javax.security.sasl.AuthenticationException;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
+/**
+ * 驗證用controller.
+ * @program: webscoket
+ * @description: 驗證用controller
+ * @author: BruceHsu
+ * @create: 2018-12-01 12:26
+ */
 @RestController
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 @RequestMapping(value = "/auth")
@@ -41,6 +44,11 @@ public class AuthController {
         return authService.login(authRequest.getUsername(),authRequest.getPassword());
     }
 
+    /**
+     * @Description: 刷新token
+     * @Param: [request]
+     * @return: org.springframework.http.ResponseEntity<?>
+     */
     @RequestMapping(value = "/refresh", method = RequestMethod.GET)
     public ResponseEntity<?> refreshAndGetAuthenticationToken(HttpServletRequest request) throws AuthenticationException {
         String token = request.getHeader(tokenHeader);

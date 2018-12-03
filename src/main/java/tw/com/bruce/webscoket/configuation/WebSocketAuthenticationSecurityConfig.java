@@ -12,7 +12,7 @@ import tw.com.bruce.webscoket.security.filter.AuthChannelInterceptorAdapter;
 
 /**
  * @program: webscoket
- * @description:
+ * @description: websocket security setting
  * @author: BruceHsu
  * @create: 2018-12-01 02:13
  */

@@ -6,8 +6,11 @@
  */
 package tw.com.bruce.webscoket.security.service.model;
 
+import lombok.Data;
+
 import java.io.Serializable;
 
+@Data
 public class User implements Serializable {
 
     /**
@@ -15,41 +18,13 @@ public class User implements Serializable {
      */
     private static final long serialVersionUID = 1L;
 
-    /**
-     * 伺服器回傳狀態
-     */
+    /** 伺服器回傳狀態.*/
     private boolean resultStatus;
-    /**
-     * 伺服器訊息
-     */
-    private String message;
-    /**
-     * 序列化物件
-     */
-    private Object model;
 
-    public boolean isResultStatus() {
-        return resultStatus;
-    }
+    /**  帳戶. */
+    private String userName;
 
-    public void setResultStatus(boolean resultStatus) {
-        this.resultStatus = resultStatus;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public Object getModel() {
-        return model;
-    }
-
-    public void setModel(Object model) {
-        this.model = model;
-    }
+    /** 密碼.*/
+    private String password;
 
 }
